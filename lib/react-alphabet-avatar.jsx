@@ -1,5 +1,4 @@
 
-
 var ReactAlphabetAvatar = React.createClass({
 
     propTypes: {
@@ -7,14 +6,15 @@ var ReactAlphabetAvatar = React.createClass({
         height: React.PropTypes.number,
         border_radius: React.PropTypes.number,
         colorset: React.PropTypes.array,
+        bold: React.PropTypes.boolean,
         text: React.PropTypes.string.isRequired
     },
 
     getDefaultProps: function(){
         return {
-            width: 100,
-            height: 100,
-            border_radius: 0
+            width: 50,
+            height: 50,
+            border_radius: 0,
             text: 'A',
             colorset: ['#ed7872', '#5e97f6', '#ba68c8', '#66cccc', '#fbc02d', '#90a4ae', '#8d6e63', '#6492ce']
         };
