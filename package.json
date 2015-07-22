@@ -1,0 +1,27 @@
+{
+  "name": "react-alphabet-avatar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/upgle/react-alphabet-avatar.git"
+  },
+  "author": "UPGLE(admin@upgle.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/upgle/react-alphabet-avatar/issues"
+  },
+  "homepage": "https://github.com/upgle/react-alphabet-avatar",
+  "dependencies": {
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jsx": "^2.0.0",
+    "gulp-react": "^3.0.1"
+  }
+}
