@@ -2,6 +2,7 @@
 var ReactAlphabetAvatar = React.createClass({
 
     propTypes: {
+        avatar: React.PropTypes.string,
         width: React.PropTypes.number,
         height: React.PropTypes.number,
         border_radius: React.PropTypes.number,
@@ -21,6 +22,12 @@ var ReactAlphabetAvatar = React.createClass({
         };
     },
 
+    getInitialState: function() {
+        return {
+            error : false
+        }
+    },
+
     getColorset: function(alphabet) {
         return this.props.colorset[this.getStringHashCode(alphabet) % this.props.colorset.length];
     },
@@ -36,37 +43,47 @@ var ReactAlphabetAvatar = React.createClass({
         return hash;
     },
 
-    shouldComponentUpdate: function(nextProps) {
-        return this.props.text !== nextProps.text;
+    imageError: function() {
+        this.setState({error: true});
     },
 
     render: function(){
 
-        var alphabet = this.props.text.substring(0, 1).toUpperCase(),
+        var avatar,
+            alphabet = this.props.text.substring(0, 1).toUpperCase(),
             fontSize = Math.round((this.props.height + this.props.width) / 4);
 
-        this.getColorset(alphabet);
-
         var divStyle = {
-            margin: 0,
-            padding: 0,
-            color: 'white',
-            height: this.props.height,
-            width: this.props.width,
-            lineHeight: this.props.height + 'px',
-            textAlign: 'center',
-            background: this.getColorset(alphabet),
-            borderRadius: this.props.border_radius,
-            fontSize: fontSize
-        };
+                overflow: 'hidden',
+                margin: 0,
+                padding: 0,
+                color: 'white',
+                height: this.props.height,
+                width: this.props.width,
+                lineHeight: this.props.height + 'px',
+                textAlign: 'center',
+                background: this.getColorset(alphabet),
+                borderRadius: this.props.border_radius,
+                fontSize: fontSize
+            },
+            imgStyle = {
+                height: this.props.height,
+                width: this.props.width
+            };
+
+        if(this.state.error === false && this.props.avatar) {
+            avatar = <img style={imgStyle} src={this.props.avatar} onError={this.imageError} />;
+        }
 
         if(this.props.bold === true) {
             divStyle.fontWeight = 'bold';
         }
 
         return (
-            <div style={divStyle}>{alphabet}</div>
+            <div style={divStyle}>
+                {avatar}
+                {alphabet}
+            </div>
         );
     }
-
 });
