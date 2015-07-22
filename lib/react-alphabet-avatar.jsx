@@ -33,6 +33,7 @@ var ReactAlphabetAvatar = React.createClass({
             lineHeight: this.props.height + 'px',
             textAlign: 'center',
             background: '#dddddd',
+            borderRadius: this.props.border_radius,
             fontSize: fontSize
         };
 
