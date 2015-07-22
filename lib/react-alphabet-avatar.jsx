@@ -41,7 +41,7 @@ var ReactAlphabetAvatar = React.createClass({
 
     render: function(){
 
-        var alphabet = this.props.text.substring(0, 1),
+        var alphabet = this.props.text.substring(0, 1).toUpperCase(),
             fontSize = Math.round((this.props.height + this.props.width) / 4);
 
         this.getColorset(alphabet);
