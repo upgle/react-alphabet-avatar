@@ -16,7 +16,8 @@ var ReactAlphabetAvatar = React.createClass({
             height: 50,
             border_radius: 0,
             text: 'A',
-            colorset: ['#ed7872', '#5e97f6', '#ba68c8', '#66cccc', '#fbc02d', '#90a4ae', '#8d6e63', '#6492ce']
+            colorset: ['#ed7872', '#5e97f6', '#ba68c8', '#66cccc', '#fbc02d', '#90a4ae', '#8d6e63', '#6492ce'],
+            bold: false
         };
     },
 
@@ -58,6 +59,10 @@ var ReactAlphabetAvatar = React.createClass({
             borderRadius: this.props.border_radius,
             fontSize: fontSize
         };
+
+        if(this.props.bold === true) {
+            divStyle.fontWeight = 'bold';
+        }
 
         return (
             <div style={divStyle}>{alphabet}</div>
