@@ -1,6 +1,8 @@
 # react-alphabet-avatar
 If browser can not show user avatar any reason, this component will show avatar consisting of character(alphabet) and background.
 
+## Preview
+
 ## Usage
 ```javascript
 var React = require('react');
