@@ -9,17 +9,17 @@ var ReactAlphabetAvatar = require('react-alphabet-avatar');
 var example = React.createClass({
   render() {
     return (
-      <ReactAlphabetAvatar 
+      <ReactAlphabetAvatar
       avatar="http://example.com/avatar.png",
       text="UPGLE"
-      width={48} 
-      height={48}
-      border_radius={4} 
+      width={50}
+      height={50}
+      border_radius={4}
       bold={false} />
     )  
   }
-});    
-    
+});
+
 module.exports = example;
 ```
 
@@ -33,4 +33,3 @@ module.exports = example;
 | border_radius  | number  | 0        | The border radius of alphabet avatar.
 | bold           | boolean | false    | The bold style of text.
 | colorset       | array   |          | Colorset of background. (default => [#ed7872, #5e97f6, #ba68c8, #66cccc, #fbc02d, #90a4ae, #8d6e63, #6492ce] )
-
